@@ -9,4 +9,3 @@ lazy val root = project.in(file("."))
   .settings(BuildSettings.scalifySettings)
   .settings(libraryDependencies ++= Dependencies.all)
   .settings(BuildSettings.helpersSettings)
-
