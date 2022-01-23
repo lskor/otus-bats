@@ -20,4 +20,11 @@ class MonadTest extends AnyFlatSpec {
 		assert(Monad[Option].map(Option(1))(_.toString) === Some("1"))
 		assert(Monad[Option].map(Option(null))(_.toString) === None)
 	}
+
+	"check ListMonad " should "ok" in {
+		assert(Monad[List].flatMap(List(1, 2, 3))(a => List(a + 1)) === List(2, 3, 4))
+		assert(Monad[List].point(3) === List(3))
+		assert(Monad[List].flatten(List(List(1, 2), List(3, 4))) === List(1, 2, 3, 4))
+		assert(Monad[List].map(List(1, 2))(_ + 1) === List(2, 3))
+	}
 }

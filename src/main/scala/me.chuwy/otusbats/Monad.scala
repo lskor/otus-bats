@@ -20,4 +20,12 @@ object Monad {
 
     override def map[A, B](fa: Option[A])(f: A => B): Option[B] = fa.map(f)
   }
+
+  implicit val ListMonad: Monad[List] = new Monad[List] {
+    override def flatMap[A, B](fa: List[A])(f: A => List[B]): List[B] = fa.flatMap(f)
+
+    override def point[A](a: A): List[A] = List(a)
+
+    override def map[A, B](fa: List[A])(f: A => B): List[B] = fa.map(f)
+  }
 }
