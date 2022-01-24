@@ -1,5 +1,7 @@
 package me.chuwy.otusbats
 
+import scala.util.Try
+
 trait Monad[F[_]] extends Functor[F] { self =>
   def flatMap[A, B](fa: F[A])(f: A => F[B]): F[B]
 
@@ -27,5 +29,13 @@ object Monad {
     override def point[A](a: A): List[A] = List(a)
 
     override def map[A, B](fa: List[A])(f: A => B): List[B] = fa.map(f)
+  }
+
+  implicit val FutureMonad: Monad[Try] = new Monad[Try] {
+    override def flatMap[A, B](fa: Try[A])(f: A => Try[B]): Try[B] = fa.flatMap(f)
+
+    override def point[A](a: A): Try[A] = Try(a)
+
+    override def map[A, B](fa: Try[A])(f: A => B): Try[B] = fa.map(f)
   }
 }
