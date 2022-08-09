@@ -1,25 +1,5 @@
 # otus-bats
 
-## Quickstart
+## Fork for home work of course Scala Developer
 
-```bash
-$ sbt assembly
-```
-
-## Copyright and License
-
-           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-                   Version 2, December 2004
-
-Copyright (C) 2021 Anton Parkhomenko <mailbox@chuwy.me>
-
-Everyone is permitted to copy and distribute verbatim or modified
-copies of this license document, and changing it is allowed as long
-as the name is changed.
-
-           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
-  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
-
-0. You just DO WHAT THE FUCK YOU WANT TO.
-
-[license]: http://www.wtfpl.net/
+1. [Сats core, data types and type classes](https://github.com/lskor/otus-bats/pull/2)
